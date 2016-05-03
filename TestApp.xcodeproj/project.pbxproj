@@ -16,6 +16,10 @@
 		67657B431CCE942E0006CF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67657B411CCE942E0006CF88 /* LaunchScreen.storyboard */; };
 		67657B4E1CCE942E0006CF88 /* TestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B4D1CCE942E0006CF88 /* TestAppTests.m */; };
 		67657B591CCE942E0006CF88 /* TestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B581CCE942E0006CF88 /* TestAppUITests.m */; };
+		67657B681CCE94C40006CF88 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B671CCE94C40006CF88 /* TestClass.m */; };
+		67657B6B1CD034070006CF88 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B6A1CD034070006CF88 /* Tree.m */; };
+		67657B701CD069AC0006CF88 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B6F1CD069AC0006CF88 /* Node.m */; };
+		67657B731CD8D9FC0006CF88 /* Trie.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B721CD8D9FC0006CF88 /* Trie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		67657B541CCE942E0006CF88 /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67657B581CCE942E0006CF88 /* TestAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAppUITests.m; sourceTree = "<group>"; };
 		67657B5A1CCE942E0006CF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67657B661CCE946E0006CF88 /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		67657B671CCE94C40006CF88 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
+		67657B691CD033960006CF88 /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		67657B6A1CD034070006CF88 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
+		67657B6E1CD0693E0006CF88 /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		67657B6F1CD069AC0006CF88 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = ../Node.m; sourceTree = "<group>"; };
+		67657B711CD8D9860006CF88 /* Trie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
+		67657B721CD8D9FC0006CF88 /* Trie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trie.m; path = ../Trie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +117,16 @@
 			children = (
 				67657B331CCE942E0006CF88 /* AppDelegate.h */,
 				67657B341CCE942E0006CF88 /* AppDelegate.m */,
+				67657B711CD8D9860006CF88 /* Trie.h */,
+				67657B721CD8D9FC0006CF88 /* Trie.m */,
+				67657B691CD033960006CF88 /* Tree.h */,
+				67657B6A1CD034070006CF88 /* Tree.m */,
+				67657B6E1CD0693E0006CF88 /* Node.h */,
+				67657B6F1CD069AC0006CF88 /* Node.m */,
 				67657B361CCE942E0006CF88 /* ViewController.h */,
 				67657B371CCE942E0006CF88 /* ViewController.m */,
+				67657B661CCE946E0006CF88 /* TestClass.h */,
+				67657B671CCE94C40006CF88 /* TestClass.m */,
 				67657B391CCE942E0006CF88 /* Main.storyboard */,
 				67657B3F1CCE942E0006CF88 /* Assets.xcassets */,
 				67657B411CCE942E0006CF88 /* LaunchScreen.storyboard */,
@@ -273,8 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67657B681CCE94C40006CF88 /* TestClass.m in Sources */,
 				67657B381CCE942E0006CF88 /* ViewController.m in Sources */,
+				67657B701CD069AC0006CF88 /* Node.m in Sources */,
 				67657B3E1CCE942E0006CF88 /* TestApp.xcdatamodeld in Sources */,
+				67657B6B1CD034070006CF88 /* Tree.m in Sources */,
+				67657B731CD8D9FC0006CF88 /* Trie.m in Sources */,
 				67657B351CCE942E0006CF88 /* AppDelegate.m in Sources */,
 				67657B321CCE942E0006CF88 /* main.m in Sources */,
 			);
