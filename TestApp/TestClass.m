@@ -429,6 +429,15 @@
 	}
 }
 
++(void)printList:(Node *)head {
+	if (head != NULL) {
+		do {
+			printf("%d, ", head.value);
+			head = [head next];
+		} while (head != NULL);
+	}
+}
+
 //This function goes through the list of numbers
 //And finds the number that doesn't have a duplicate and returns it.
 +(int)findSingleNumber:(int *)numbers length:(int)len {
@@ -691,6 +700,7 @@
 	return NO;
 }
 
+//D: Dove, Do: Dog, Z: Zebra, etc. example
 +(void)findPrefix:(NSArray *)input {
 	
 	NSMutableDictionary *output = [[NSMutableDictionary alloc] init];
@@ -731,6 +741,90 @@
 	for (NSString *key in [dic allKeys]) {
 		NSLog(@"%@:%@", key, [dic valueForKey:key]);
 	}
+}
+
++(Node *)mergeTwo:(Node *)a b:(Node *)b {
+	
+	if (a == NULL) {
+		return b;
+	}
+	else if (b == NULL) {
+		return a;
+	}
+	
+	Node *result = NULL;
+	
+	if (a.value >= b.value) {
+		result = b;
+		result.next = [self mergeTwo:a b:[b next]];
+	} else {
+		result = a;
+		result.next = [self mergeTwo:[a next] b:b];
+	}
+	
+	return result;
+}
+
++(Node *)mergeKLists:(NSArray *)A len:(int)len {
+	
+	Node *ans = A[0];
+	int i = 0;
+	
+	for (i=1; i<len; i++) {
+		ans = [self mergeTwo:ans b:A[i]];
+	}
+	
+	return ans;
+}
+
++(Node *)mergeSortedLists:(NSArray *)lists {
+	
+	Node *head = [[Node alloc] init];
+	head.value = 0;
+	Node *tail = head;
+	
+	NSMutableArray *mutableList = [[NSMutableArray alloc] initWithArray:lists];
+	
+	int min = 99999;
+	BOOL recordFound = YES;
+	
+	while (recordFound) {
+		recordFound = NO;
+		min = 99999;
+		Node *updatedList;
+		int rowToUpdate = 0;
+		
+		for (int i=0; i<mutableList.count; i++) {
+			Node *curList = [mutableList objectAtIndex:i];
+			if ([curList next] != NULL) {
+				recordFound = YES;
+			}
+			if ([curList value] < min) {
+				min = [curList value];
+				//Now we found a new min, move the head
+				if ([curList next] == NULL) {
+					[mutableList removeObjectAtIndex:i];
+				}
+				curList = [curList next];
+				updatedList = curList;
+				rowToUpdate = i;
+			}
+		}
+		
+		if (min != 99999) {
+			Node *newMin = [[Node alloc] init];
+			newMin.value = min;
+			tail.next = newMin;
+			tail = [tail next];
+			if (updatedList != NULL) {
+				mutableList[rowToUpdate] = updatedList;
+			}
+		}
+	}
+	
+	
+	
+	return head;
 }
 
 @end

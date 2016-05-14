@@ -11,6 +11,8 @@
 #import "Tree.h"
 #import "Node.h"
 
+typedef NSInteger (^TypeName)();
+
 @interface TestClass : NSObject
 
 +(int)get_max_profit:(int *)stockPrices size:(int)arraySize;
@@ -40,6 +42,7 @@
 +(void)printArray:(int *)array len:(int)length;
 +(void)printCharArray:(char *)array len:(int)length;
 +(void)printTreeAsList:(Tree *)tree;
++(void)printList:(Node *)head;
 +(int)isPrime:(int)A;
 +(NSMutableArray *)findPrimesAddToX:(int)X;
 +(NSMutableArray *)findAllPrimesLessThan:(int)num;
@@ -50,5 +53,7 @@
 +(BOOL)evaluateInput:(NSString *)input;
 +(void)findPrefix:(NSArray *)input;
 +(void)printDictionary:(NSDictionary *)dic;
-
++(Node *)mergeSortedLists:(NSArray *)lists;
++(Node *)mergeTwo:(Node *)a b:(Node *)b;
++(Node *)mergeKLists:(NSArray *)A len:(int)len;
 @end

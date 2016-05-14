@@ -182,7 +182,7 @@
 	[TestClass print2DArraySorted:array];
 	
 	NSArray *a = [[NSArray alloc] initWithObjects: @3, @5, @2, @9, @12, @8, nil];
-	bool sum = [TestClass findContinuousSum:a X:1];
+	bool sum = [TestClass findContinuousSum:a X:8];
 	printf("sum: %i\n", sum);
 	
 	char word[] = {'h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd'};
@@ -208,7 +208,46 @@
 	NSArray *wordArray = [[NSArray alloc] initWithObjects:@"zebra", @"dog", @"duck", @"dove", nil];
 	[TestClass findPrefix:wordArray];
 	
+	Node *uno = [[Node alloc] init];
+	uno.value = 1;
 	
+	Node *ten = [[Node alloc] init];
+	ten.value = 10;
+	uno.next = ten;
+	
+	Node *twenty = [[Node alloc] init];
+	twenty.value = 20;
+	ten.next = twenty;
+	
+	Node *foour = [[Node alloc] init];
+	foour.value = 4;
+	
+	Node *eleven = [[Node alloc] init];
+	eleven.value = 11;
+	foour.next = eleven;
+	
+	Node *thirteen = [[Node alloc] init];
+	thirteen.value = 13;
+	eleven.next = thirteen;
+	
+	Node *threee = [[Node alloc] init];
+	threee.value = 3;
+	
+	Node *eeight = [[Node alloc] init];
+	eeight.value = 8;
+	threee.next = eeight;
+	
+	Node *nine = [[Node alloc] init];
+	nine.value = 9;
+	eeight.next = nine;
+	
+	NSArray *listArray = [[NSArray alloc] initWithObjects:uno, foour, threee, nil];
+	Node *resultList = [[Node alloc] init];
+	//resultList = [TestClass mergeSortedLists:listArray];
+	resultList = [TestClass mergeKLists:listArray len:3];
+	[TestClass printList:resultList];
+	
+	//[TestClass printList:resultList];
 	
 }
 
