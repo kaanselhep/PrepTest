@@ -437,14 +437,14 @@
 	__block Node *head2 = head;
 	
 	//Run this in the background thread for no reason
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+	//dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 		if (head2 != NULL) {
 			do {
 				printf("%d, ", head2.value);
 				head2 = [head2 next];
 			} while (head2 != NULL);
 		}
-	});
+	//});
 }
 
 //This function goes through the list of numbers
@@ -831,10 +831,30 @@
 			}
 		}
 	}
-	
-	
-	
 	return head;
+}
+
+//Find the diagonal difference of a given Matrix of numbers
+//Sample input
+//11, 2, 4
+//4, 5, 6
+//10, 8, -12
++(int)diagonalDifference:(NSArray *)A len:(int)len {
+	int result = 0;
+	int i,j=0;	//traversal helpers
+	
+	int sumDown, sumUp = 0;
+	for (i=0, j=0; i<len; i++, j++) {
+		sumDown += ((NSNumber *)A[i][j]).intValue;
+	}
+	
+	for (i=0, j=len-1; i<len, j>=0; i++, j--) {
+		sumUp += ((NSNumber *)A[i][j]).intValue;
+	}
+	
+	result = abs(sumDown - sumUp);
+	
+	return result;
 }
 
 @end

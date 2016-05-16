@@ -240,8 +240,13 @@
 	resultList = [TestClass mergeKLists:listArray len:3];
 	[TestClass printList:resultList];
 	
-	//[TestClass printList:resultList];
+	NSArray *rowOne = [[NSArray alloc] initWithObjects:@11, @2, @4, nil];
+	NSArray *rowTwo = [[NSArray alloc] initWithObjects:@4, @5, @6, nil];
+	NSArray *rowThree = [[NSArray alloc] initWithObjects:@10, @8, @-12, nil];
+	NSArray *diagonalArray = [[NSArray alloc] initWithObjects:rowOne, rowTwo, rowThree, nil];
 	
+	int diagonalSum = [TestClass diagonalDifference:diagonalArray len:3];
+	printf("result: %d", diagonalSum);
 }
 
 - (void)didReceiveMemoryWarning {

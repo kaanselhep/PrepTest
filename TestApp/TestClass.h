@@ -56,4 +56,5 @@ typedef NSInteger (^block)();
 +(Node *)mergeSortedLists:(NSArray *)lists;
 +(Node *)mergeTwo:(Node *)a b:(Node *)b;
 +(Node *)mergeKLists:(NSArray *)A len:(int)len;
++(int)diagonalDifference:(NSArray *)A len:(int)len;
 @end
