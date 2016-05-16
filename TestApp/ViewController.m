@@ -19,14 +19,6 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	//NSMutableArray *stockPrices = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithInteger:10], nil];
-//	NSMutableArray *stockPrices = [[NSMutableArray alloc] init];
-//	[stockPrices addObject:[NSNumber numberWithInteger:10]];
-//	[stockPrices addObject:7];
-//	[stockPrices addObject:5];
-//	[stockPrices addObject:8];
-//	[10, 7, 5, 8, 11, 9];
-	
 	int stockPrices[] = {10, 7, 5, 8, 11, 9};
 	int stockPricesSize = sizeof(stockPrices) / sizeof(stockPrices[0]);
 	
@@ -243,6 +235,7 @@
 	
 	NSArray *listArray = [[NSArray alloc] initWithObjects:uno, foour, threee, nil];
 	Node *resultList = [[Node alloc] init];
+	
 	//resultList = [TestClass mergeSortedLists:listArray];
 	resultList = [TestClass mergeKLists:listArray len:3];
 	[TestClass printList:resultList];
@@ -255,7 +248,6 @@
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
-
 
 
 @end

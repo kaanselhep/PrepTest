@@ -11,7 +11,7 @@
 #import "Tree.h"
 #import "Node.h"
 
-typedef NSInteger (^TypeName)();
+typedef NSInteger (^block)();
 
 @interface TestClass : NSObject
 

@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67621C731CE7B8EC00DC4773 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67621C721CE7B8EC00DC4773 /* ImagesTableViewController.m */; };
+		67621C761CE7C1BE00DC4773 /* OperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67621C751CE7C1BE00DC4773 /* OperationViewController.m */; };
+		67621C791CE8FCFC00DC4773 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67621C771CE8FCFC00DC4773 /* Model.xcdatamodeld */; };
+		67621C7B1CE9940400DC4773 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 67621C7A1CE9940400DC4773 /* Person.m */; };
 		67657B321CCE942E0006CF88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B311CCE942E0006CF88 /* main.m */; };
 		67657B351CCE942E0006CF88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B341CCE942E0006CF88 /* AppDelegate.m */; };
 		67657B381CCE942E0006CF88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B371CCE942E0006CF88 /* ViewController.m */; };
 		67657B3B1CCE942E0006CF88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67657B391CCE942E0006CF88 /* Main.storyboard */; };
-		67657B3E1CCE942E0006CF88 /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67657B3C1CCE942E0006CF88 /* TestApp.xcdatamodeld */; };
 		67657B401CCE942E0006CF88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67657B3F1CCE942E0006CF88 /* Assets.xcassets */; };
 		67657B431CCE942E0006CF88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67657B411CCE942E0006CF88 /* LaunchScreen.storyboard */; };
 		67657B4E1CCE942E0006CF88 /* TestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B4D1CCE942E0006CF88 /* TestAppTests.m */; };
@@ -40,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67621C711CE7B82800DC4773 /* ImagesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
+		67621C721CE7B8EC00DC4773 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		67621C741CE7C0E100DC4773 /* OperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationViewController.h; sourceTree = "<group>"; };
+		67621C751CE7C1BE00DC4773 /* OperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationViewController.m; sourceTree = "<group>"; };
+		67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		67621C7A1CE9940400DC4773 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		67621C7C1CE9949100DC4773 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		67657B2D1CCE942E0006CF88 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67657B311CCE942E0006CF88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67657B331CCE942E0006CF88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,7 +57,6 @@
 		67657B361CCE942E0006CF88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		67657B371CCE942E0006CF88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		67657B3A1CCE942E0006CF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		67657B3D1CCE942E0006CF88 /* TestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestApp.xcdatamodel; sourceTree = "<group>"; };
 		67657B3F1CCE942E0006CF88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67657B421CCE942E0006CF88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67657B441CCE942E0006CF88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,15 +132,21 @@
 				67657B6A1CD034070006CF88 /* Tree.m */,
 				67657B6E1CD0693E0006CF88 /* Node.h */,
 				67657B6F1CD069AC0006CF88 /* Node.m */,
+				67621C7C1CE9949100DC4773 /* Person.h */,
+				67621C7A1CE9940400DC4773 /* Person.m */,
+				67621C741CE7C0E100DC4773 /* OperationViewController.h */,
+				67621C751CE7C1BE00DC4773 /* OperationViewController.m */,
+				67621C711CE7B82800DC4773 /* ImagesTableViewController.h */,
+				67621C721CE7B8EC00DC4773 /* ImagesTableViewController.m */,
 				67657B361CCE942E0006CF88 /* ViewController.h */,
 				67657B371CCE942E0006CF88 /* ViewController.m */,
 				67657B661CCE946E0006CF88 /* TestClass.h */,
 				67657B671CCE94C40006CF88 /* TestClass.m */,
 				67657B391CCE942E0006CF88 /* Main.storyboard */,
+				67621C771CE8FCFC00DC4773 /* Model.xcdatamodeld */,
 				67657B3F1CCE942E0006CF88 /* Assets.xcassets */,
 				67657B411CCE942E0006CF88 /* LaunchScreen.storyboard */,
 				67657B441CCE942E0006CF88 /* Info.plist */,
-				67657B3C1CCE942E0006CF88 /* TestApp.xcdatamodeld */,
 				67657B301CCE942E0006CF88 /* Supporting Files */,
 			);
 			path = TestApp;
@@ -295,11 +310,14 @@
 			files = (
 				67657B681CCE94C40006CF88 /* TestClass.m in Sources */,
 				67657B381CCE942E0006CF88 /* ViewController.m in Sources */,
+				67621C761CE7C1BE00DC4773 /* OperationViewController.m in Sources */,
 				67657B701CD069AC0006CF88 /* Node.m in Sources */,
-				67657B3E1CCE942E0006CF88 /* TestApp.xcdatamodeld in Sources */,
 				67657B6B1CD034070006CF88 /* Tree.m in Sources */,
+				67621C7B1CE9940400DC4773 /* Person.m in Sources */,
 				67657B731CD8D9FC0006CF88 /* Trie.m in Sources */,
+				67621C731CE7B8EC00DC4773 /* ImagesTableViewController.m in Sources */,
 				67657B351CCE942E0006CF88 /* AppDelegate.m in Sources */,
+				67621C791CE8FCFC00DC4773 /* Model.xcdatamodeld in Sources */,
 				67657B321CCE942E0006CF88 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +544,7 @@
 				67657B5F1CCE942E0006CF88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		67657B601CCE942E0006CF88 /* Build configuration list for PBXNativeTarget "TestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +553,7 @@
 				67657B621CCE942E0006CF88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		67657B631CCE942E0006CF88 /* Build configuration list for PBXNativeTarget "TestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,17 +562,18 @@
 				67657B651CCE942E0006CF88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		67657B3C1CCE942E0006CF88 /* TestApp.xcdatamodeld */ = {
+		67621C771CE8FCFC00DC4773 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				67657B3D1CCE942E0006CF88 /* TestApp.xcdatamodel */,
+				67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */,
 			);
-			currentVersion = 67657B3D1CCE942E0006CF88 /* TestApp.xcdatamodel */;
-			path = TestApp.xcdatamodeld;
+			currentVersion = 67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

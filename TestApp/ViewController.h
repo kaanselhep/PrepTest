@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+	IBOutlet UIButton *loadTableButton;
+}
 
+@property (nonatomic, weak) IBOutlet UIButton *loadTableButton;
+
+-(IBAction)loadTableTapped:(id)sender;
 
 @end
 

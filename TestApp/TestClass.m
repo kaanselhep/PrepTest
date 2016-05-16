@@ -10,6 +10,9 @@
 #import "TestClass.h"
 #import "Tree.h"
 
+#define PI 3.14519
+#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / PI))
+
 @implementation TestClass
 
 // **** LOOSE COUPLING ****
@@ -21,7 +24,7 @@
 	
 	int minBuy = 99999;
 	int maxSell = -9999;
-
+	
 	for (int i=0; i<arraySize; i++) {
 		if (stockPrices[i] < minBuy) {
 			minBuy = stockPrices[i];
@@ -430,17 +433,24 @@
 }
 
 +(void)printList:(Node *)head {
-	if (head != NULL) {
-		do {
-			printf("%d, ", head.value);
-			head = [head next];
-		} while (head != NULL);
-	}
+	
+	__block Node *head2 = head;
+	
+	//Run this in the background thread for no reason
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+		if (head2 != NULL) {
+			do {
+				printf("%d, ", head2.value);
+				head2 = [head2 next];
+			} while (head2 != NULL);
+		}
+	});
 }
 
 //This function goes through the list of numbers
 //And finds the number that doesn't have a duplicate and returns it.
 +(int)findSingleNumber:(int *)numbers length:(int)len {
+	
 	int num = 0;
 	for (int i=0; i<len; i++) {
 		num ^= numbers[i];
@@ -768,12 +778,12 @@
 +(Node *)mergeKLists:(NSArray *)A len:(int)len {
 	
 	Node *ans = A[0];
-	int i = 0;
 	
+	int i = 0;
 	for (i=1; i<len; i++) {
 		ans = [self mergeTwo:ans b:A[i]];
 	}
-	
+
 	return ans;
 }
 
