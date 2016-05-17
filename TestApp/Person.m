@@ -11,5 +11,6 @@
 @implementation Person
 
 @dynamic name;
+@dynamic facebookId;
 
 @end

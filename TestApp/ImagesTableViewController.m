@@ -9,32 +9,40 @@
 #import "ImagesTableViewController.h"
 #import "AppDelegate.h"
 #import "Person.h"
+#import "PersonTableViewCell.h"
 
 @implementation ImagesTableViewController
 
 - (void)viewDidLoad {
+	[super viewDidLoad];
 	self.people = [[NSMutableArray alloc] init];
-	[self.tableView registerClass: UITableViewCell.self forCellReuseIdentifier:@"Cell"];
+	//[self.tableView registerClass: UITableViewCell.self forCellReuseIdentifier:@"PersonTableViewCell"];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	
-	AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-	
-	NSManagedObjectContext *context = [appDelegate managedObjectContext];
-	
-	NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Person"];
-	
-	NSManagedObjectModel *managedObjectModel = [[context persistentStoreCoordinator] managedObjectModel];
-	NSDictionary *entities = [managedObjectModel entitiesByName];
-	NSArray *entityNames = [entities allKeys];
-	NSLog(@"All loaded entities are: %@", entityNames);
-	
-	NSError *error;
-	self.people = [[context executeFetchRequest:request error:&error] mutableCopy];
-	
-	
+	//Execute the fetch in a background thread
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+		AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+		
+		NSManagedObjectContext *context = [appDelegate managedObjectContext];
+		
+		NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Person"];
+		
+		NSManagedObjectModel *managedObjectModel = [[context persistentStoreCoordinator] managedObjectModel];
+		NSDictionary *entities = [managedObjectModel entitiesByName];
+		NSArray *entityNames = [entities allKeys];
+		NSLog(@"All loaded entities are: %@", entityNames);
+		
+		NSError *error;
+		self.people = [[context executeFetchRequest:request error:&error] mutableCopy];
+		
+		//Switch back to main thread for table reload
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.tableView reloadData];
+		});
+	});
 }
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender {
@@ -72,6 +80,11 @@
 	NSManagedObject *person = [[NSManagedObject alloc] initWithEntity:personEntity insertIntoManagedObjectContext:context];
 	[person setValue:name forKey:@"name"];
 	
+	//Generate a random facebookId
+	unsigned int random = 1111111 + arc4random() % NSIntegerMax - NSIntegerMin;
+	NSString *facebookId = [NSString stringWithFormat:@"%d", random];
+	[person setValue: facebookId forKey:@"facebookId"];
+	
 	NSError *error;
 	[context save:&error];
 	
@@ -81,10 +94,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+	PersonTableViewCell *cell = (PersonTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"PersonTableViewCell" forIndexPath:indexPath];
 	
 	Person *person = self.people[indexPath.row];
-	cell.textLabel.text = person.name;
+	cell.nameLabel.text = person.name;
+	cell.fbIdLabel.text = person.facebookId;
 	
 	return cell;
 	

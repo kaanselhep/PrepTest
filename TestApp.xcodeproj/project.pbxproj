@@ -23,6 +23,7 @@
 		67657B6B1CD034070006CF88 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B6A1CD034070006CF88 /* Tree.m */; };
 		67657B701CD069AC0006CF88 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B6F1CD069AC0006CF88 /* Node.m */; };
 		67657B731CD8D9FC0006CF88 /* Trie.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B721CD8D9FC0006CF88 /* Trie.m */; };
+		6776C13F1CEAB0C6008B36A7 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6776C13E1CEAB0C6008B36A7 /* PersonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		67621C7A1CE9940400DC4773 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		67621C7C1CE9949100DC4773 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		67621C7D1CEA5C5100DC4773 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		67657B2D1CCE942E0006CF88 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67657B311CCE942E0006CF88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67657B331CCE942E0006CF88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		67657B6F1CD069AC0006CF88 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Node.m; path = ../Node.m; sourceTree = "<group>"; };
 		67657B711CD8D9860006CF88 /* Trie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Trie.h; sourceTree = "<group>"; };
 		67657B721CD8D9FC0006CF88 /* Trie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trie.m; path = ../Trie.m; sourceTree = "<group>"; };
+		6776C13D1CEAB05B008B36A7 /* PersonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		6776C13E1CEAB0C6008B36A7 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 				67657B6F1CD069AC0006CF88 /* Node.m */,
 				67621C7C1CE9949100DC4773 /* Person.h */,
 				67621C7A1CE9940400DC4773 /* Person.m */,
+				6776C13D1CEAB05B008B36A7 /* PersonTableViewCell.h */,
+				6776C13E1CEAB0C6008B36A7 /* PersonTableViewCell.m */,
 				67621C741CE7C0E100DC4773 /* OperationViewController.h */,
 				67621C751CE7C1BE00DC4773 /* OperationViewController.m */,
 				67621C711CE7B82800DC4773 /* ImagesTableViewController.h */,
@@ -310,6 +316,7 @@
 			files = (
 				67657B681CCE94C40006CF88 /* TestClass.m in Sources */,
 				67657B381CCE942E0006CF88 /* ViewController.m in Sources */,
+				6776C13F1CEAB0C6008B36A7 /* PersonTableViewCell.m in Sources */,
 				67621C761CE7C1BE00DC4773 /* OperationViewController.m in Sources */,
 				67657B701CD069AC0006CF88 /* Node.m in Sources */,
 				67657B6B1CD034070006CF88 /* Tree.m in Sources */,
@@ -570,9 +577,10 @@
 		67621C771CE8FCFC00DC4773 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				67621C7D1CEA5C5100DC4773 /* Model 2.xcdatamodel */,
 				67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */,
 			);
-			currentVersion = 67621C781CE8FCFC00DC4773 /* Model.xcdatamodel */;
+			currentVersion = 67621C7D1CEA5C5100DC4773 /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
