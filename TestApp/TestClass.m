@@ -848,13 +848,95 @@
 		sumDown += ((NSNumber *)A[i][j]).intValue;
 	}
 	
-	for (i=0, j=len-1; i<len, j>=0; i++, j--) {
+	for (i=0, j=len-1; j>=0; i++, j--) {
 		sumUp += ((NSNumber *)A[i][j]).intValue;
 	}
 	
 	result = abs(sumDown - sumUp);
 	
 	return result;
+}
+
++(void)makeWaveArray:(NSArray *)A {
+	
+	//Sort the array first
+	//C type array
+	int count = [A count];
+	int *array = malloc(sizeof(int) * count);
+	
+	for (int i=0; i<count; i++) {
+		array[i] = [[A objectAtIndex:i] intValue];
+	}
+	
+	//sort our array
+	[self mergeSort:array len:count];
+	
+	//Now swap its elements to make a wave array
+	for (int i=0; i<count-1; i=i+2) {
+		int temp = array[i];
+		array[i] = array[i+1];
+		array[i+1] = temp;
+	}
+	
+	[self printArray:array len:count];
+}
+
++(void)depthFirstSearch:(Tree *)t {
+	if (t != NULL) {
+		printf("%d,", t.data);
+		if ([t left] != NULL) {
+			printf("\n / ");
+			[self depthFirstSearch:t.left];
+		}
+		if ([t right] != NULL) {
+			printf("\n \\ ");
+			[self depthFirstSearch:t.right];
+		}
+	}
+	return;
+}
+
++(void)breathFirstSearch:(Tree *)t {
+	if (t != NULL) {
+		printf("%d", t.data);
+		if ([t right] != NULL) {
+			printf("\n \\ ");
+			[self breathFirstSearch:t.right];
+		}
+		if ([t left] != NULL) {
+			printf("\n  /  ");
+			[self breathFirstSearch:t.left];
+		}
+	}
+	return;
+}
+
++(int)isTreeSymmetric:(Tree *)t1 t2:(Tree *)t2 {
+	
+	int result = 0;
+	
+	if (t1.data != t2.data) {
+		result = 0;
+		return 0;
+	}
+	
+	if (t1.left != NULL && t2.right != NULL) {
+		if (t1.left.data != t2.right.data) {
+			result = 0;
+			return 0;
+		}
+	}
+	
+	if (t1.right != NULL && t2.left != NULL) {
+		if (t1.right.data != t2.left.data) {
+			result = 0;
+			return 0;
+		}
+	}
+	
+	[self isTreeSymmetric:t1.left t2:t2.right];
+	
+	return 1;
 }
 
 @end

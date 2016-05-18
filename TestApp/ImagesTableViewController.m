@@ -28,7 +28,10 @@
 		
 		NSManagedObjectContext *context = [appDelegate managedObjectContext];
 		
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:@"facebookId != nil"];
+		
 		NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Person"];
+		request.predicate = predicate;
 		
 		NSManagedObjectModel *managedObjectModel = [[context persistentStoreCoordinator] managedObjectModel];
 		NSDictionary *entities = [managedObjectModel entitiesByName];

@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <CLLocationManagerDelegate> {
 	IBOutlet UIButton *loadTableButton;
 }
 
 @property (nonatomic, weak) IBOutlet UIButton *loadTableButton;
-
 -(IBAction)loadTableTapped:(id)sender;
 
 @end

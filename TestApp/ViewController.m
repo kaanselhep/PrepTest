@@ -8,16 +8,37 @@
 
 #import "ViewController.h"
 #import "TestClass.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
+
 
 @end
 
-@implementation ViewController
+@implementation ViewController 
+
+CLLocationManager *locationManager;
+CLLocationDegrees latitude;
+CLLocationDegrees longitude;
+
+- (void)RunOnThread:(id)sender {
+	
+	printf("******* Ran this on another thread ********\n");
+	
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	locationManager = [[CLLocationManager alloc] init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[locationManager requestWhenInUseAuthorization];
+	[locationManager startUpdatingLocation];
+	
+	NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(RunOnThread:) object:nil];
+	[thread start];
 	
 	int stockPrices[] = {10, 7, 5, 8, 11, 9};
 	int stockPricesSize = sizeof(stockPrices) / sizeof(stockPrices[0]);
@@ -57,17 +78,17 @@
 	printf("highProduct: %d\n", highProduct);
 	
 	Tree *A = [[Tree alloc] init];
-	A.data = 1;
+	A.data = 3;
 	Tree *Left = [[Tree alloc] init];
 	Left.data = 2;
 	Tree *Right = [[Tree alloc] init];
-	Right.data = 3;
+	Right.data = 4;
 	
 	A.left = Left;
 	A.right = Right;
 	
 	Tree *B = [[Tree alloc] init];
-	B.data = 1;
+	B.data = 3;
 	B.left = Left;
 	B.right = Right;
 	
@@ -126,7 +147,6 @@
 	int bulbs[] = {1, 1, 0, 0, 1, 1, 0, 0, 1};
 	int switchCount = [TestClass flipSwitchesCount:bulbs size:8];
 	printf("switchCount: %d\n", switchCount);
-	
 	
 	[TestClass printArray:doubleNumbers len:9];
 	[TestClass bubbleSort:doubleNumbers len:9];
@@ -191,6 +211,7 @@
 	Right.right = C;
 	
 	Tree *head = NULL;
+	printf("************ TREE TO LIST *************\n");
 	[TestClass treeToList:A head:&head];
 	[TestClass printTreeAsList:head];
 	
@@ -246,12 +267,44 @@
 	NSArray *diagonalArray = [[NSArray alloc] initWithObjects:rowOne, rowTwo, rowThree, nil];
 	
 	int diagonalSum = [TestClass diagonalDifference:diagonalArray len:3];
-	printf("result: %d", diagonalSum);
+	printf("result: %d\n", diagonalSum);
+	
+	[TestClass makeWaveArray:a];
+	
+	Tree *nTree = [[Tree alloc] init];
+	nTree.data = 1;
+	
+	Tree *leftTree = [[Tree alloc] init];
+	leftTree.data = 2;
+	nTree.left = leftTree;
+	
+	Tree *rightTree = [[Tree alloc] init];
+	rightTree.data = 3;
+	nTree.right = rightTree;
+	
+	NSLog(@"\n");
+	[TestClass depthFirstSearch:nTree];
+	NSLog(@"\n");
 }
 
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+	
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+	CLLocation *currentLocation = locations.lastObject;
+	
+	latitude = currentLocation.coordinate.latitude;
+	longitude = currentLocation.coordinate.longitude;
+	NSLog(@"latitude: %@\n", [NSString stringWithFormat:@"%f", latitude]);
+	NSLog(@"longitude: %@\n", [NSString stringWithFormat:@"%f", longitude]);
+	
+	[manager stopUpdatingLocation];
 }
 
 

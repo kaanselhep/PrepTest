@@ -57,4 +57,8 @@ typedef NSInteger (^block)();
 +(Node *)mergeTwo:(Node *)a b:(Node *)b;
 +(Node *)mergeKLists:(NSArray *)A len:(int)len;
 +(int)diagonalDifference:(NSArray *)A len:(int)len;
++(void)makeWaveArray:(NSArray *)A;
++(void)depthFirstSearch:(Tree *)t;
++(void)breathFirstSearch:(Tree *)t;
++(int)isTreeSymmetric:(Tree *)t1 t2:(Tree *)t2;
 @end

@@ -24,6 +24,7 @@
 		67657B701CD069AC0006CF88 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B6F1CD069AC0006CF88 /* Node.m */; };
 		67657B731CD8D9FC0006CF88 /* Trie.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657B721CD8D9FC0006CF88 /* Trie.m */; };
 		6776C13F1CEAB0C6008B36A7 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6776C13E1CEAB0C6008B36A7 /* PersonTableViewCell.m */; };
+		6776C1411CEAE1B4008B36A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6776C1401CEAE1B4008B36A7 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		67657B721CD8D9FC0006CF88 /* Trie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Trie.m; path = ../Trie.m; sourceTree = "<group>"; };
 		6776C13D1CEAB05B008B36A7 /* PersonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
 		6776C13E1CEAB0C6008B36A7 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
+		6776C1401CEAE1B4008B36A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6776C1411CEAE1B4008B36A7 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +111,7 @@
 		67657B241CCE942E0006CF88 = {
 			isa = PBXGroup;
 			children = (
+				6776C1401CEAE1B4008B36A7 /* CoreLocation.framework */,
 				67657B2F1CCE942E0006CF88 /* TestApp */,
 				67657B4C1CCE942E0006CF88 /* TestAppTests */,
 				67657B571CCE942E0006CF88 /* TestAppUITests */,
